@@ -1,4 +1,7 @@
 FROM python:3.10-slim
+LABEL org.opencontainers.image.source="https://github.com/VibeSmiths/mcp-rvc" \
+      org.opencontainers.image.description="GPU service: rvc" \
+      org.opencontainers.image.licenses="MIT"
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
