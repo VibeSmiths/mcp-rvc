@@ -14,8 +14,15 @@ permissions:
   packages: write
 
 jobs:
-  docker:
+  docker-nvidia:
     uses: VibeSmiths/.github/.github/workflows/docker-build.yml@main
     secrets: inherit
     with:
       image-name: mcp-rvc
+
+  docker-rocm:
+    uses: VibeSmiths/.github/.github/workflows/docker-build.yml@main
+    secrets: inherit
+    with:
+      image-name: mcp-rvc-rocm
+      dockerfile: Dockerfile.rocm
