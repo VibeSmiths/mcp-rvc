@@ -8,17 +8,10 @@ on:
     - cron: '0 6 * * 1'
 
 permissions:
-  security-events: write
   contents: read
   pull-requests: write
 
 jobs:
-  codeql:
-    uses: VibeSmiths/.github/.github/workflows/codeql.yml@main
-    secrets: inherit
-    with:
-      languages: python
-
   dependency-review:
     if: github.event_name == 'pull_request'
     uses: VibeSmiths/.github/.github/workflows/dependency-review.yml@main
