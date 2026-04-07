@@ -28,4 +28,8 @@ EXPOSE 5050
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
     CMD curl -f http://localhost:5050/models || exit 1
 
+LABEL org.opencontainers.image.source="https://github.com/VibeSmiths/mcp-rvc"
+LABEL org.opencontainers.image.description="RVC voice clone inference service"
+LABEL org.opencontainers.image.licenses="MIT"
+
 CMD ["/entrypoint.sh"]
